@@ -1,0 +1,52 @@
+import { useState } from "react";
+
+type MenuItemProps = {
+  item: {
+    id?: string;
+    label: string;
+    children?: MenuItemProps["item"][];
+    path?: string;
+  };
+};
+
+const MenuItem = ({ item }: MenuItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    if (!item.children || item.children.length === 0) {
+      window.location.href = item.path || "";
+    } else {
+      setIsOpen((prev) => !prev);
+    }
+  };
+
+  const hasChildren = item.children && item.children.length > 0;
+
+  return (
+    <div className="">
+      <div
+        onClick={handleClick}
+        className={`${
+          hasChildren
+            ? "cursor-pointer font-semibold text-gray-500"
+            : "text-gray-400 text-sm"
+        } border-b border-gray-700 p-2`}
+      >
+        <div className="flex items-center gap-2">
+          {hasChildren && (isOpen ? "▼" : "▶")}
+          <div>{item.label}</div>
+        </div>
+      </div>
+
+      {isOpen && hasChildren && (
+        <div className="ml-4">
+          {item.children?.map((child, idx) => (
+            <MenuItem key={idx} item={child} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MenuItem;
