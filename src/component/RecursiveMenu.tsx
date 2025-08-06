@@ -27,10 +27,8 @@ const MenuItem = ({ item }: MenuItemProps) => {
       <div
         onClick={handleClick}
         className={`${
-          hasChildren
-            ? "cursor-pointer font-semibold text-gray-500"
-            : "text-gray-400 text-sm"
-        } border-b border-gray-700 p-2`}
+          hasChildren ? "font-semibold text-gray-500" : "text-gray-400 text-sm"
+        } cursor-pointer border-b border-gray-700 p-2 hover:text-white`}
       >
         <div className="flex items-center gap-2">
           {hasChildren && (isOpen ? "▼" : "▶")}

@@ -62,6 +62,10 @@ const menu = [
   {
     label: "vite.config.ts",
   },
+  {
+    label: "QrCodeGenerator",
+    path: "/src/components/QrCodeGenerator/QrCodeGenerator.tsx",
+  },
 ];
 
 export default menu;

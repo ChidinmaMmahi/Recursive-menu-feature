@@ -1,4 +1,5 @@
 import "./App.css";
+import QrCodeGenerator from "./component/QRCodeGenerator/QRCodeGenerator";
 import RecursiveMenu from "./component/RecursiveMenu";
 import menu from "./data/menu";
 
@@ -10,9 +11,9 @@ function App() {
           <RecursiveMenu key={idx} item={item} />
         ))}
       </div>
-      {/* <div className="fixed top-0 bottom-0 left-[20%] w-[80%] text-white">
-        <Yolo />
-      </div> */}
+      <div className="py-10 px-2 ml-[20%] w-[80%] text-white">
+        <QrCodeGenerator />
+      </div>
     </>
   );
 }
