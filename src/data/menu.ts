@@ -33,7 +33,7 @@ const menu = [
         children: [
           {
             label: "menu.ts",
-            path: "/Yolo.tsx",
+            path: "/Yolo",
           },
         ],
       },
@@ -63,7 +63,23 @@ const menu = [
   },
   {
     label: "QR Code Generator",
-    path: "/QRCodeGenerator.tsx",
+    path: "/QRCodeGenerator",
+  },
+  {
+    label: "Random Color Generator",
+    path: "/RandomColorGenerator",
+  },
+  {
+    label: "Star Rating System",
+    path: "/StarRatingSystem",
+  },
+  {
+    label: "Load More Feature",
+    path: "/LoadMoreFeature",
+  },
+  {
+    label: "Image Slider",
+    path: "/ImageSlider",
   },
 ];
 

@@ -19,7 +19,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
       if (item.path) {
         navigate(item.path);
       } else {
-        navigate("/NotFoundPage.tsx");
+        navigate("/NotFoundPage");
       }
     } else {
       setIsOpen((prev) => !prev);
@@ -33,7 +33,9 @@ const MenuItem = ({ item }: MenuItemProps) => {
       <div
         onClick={handleClick}
         className={`${
-          hasChildren ? "font-semibold text-gray-500" : "text-gray-400 text-sm"
+          hasChildren
+            ? "font-semibold text-gray-500 text-sm"
+            : "text-gray-400 text-xs"
         } cursor-pointer border-b border-gray-700 p-2 hover:text-white`}
       >
         <div className="flex items-center gap-2">
