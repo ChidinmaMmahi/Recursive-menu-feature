@@ -25,7 +25,6 @@ const menu = [
         children: [
           {
             label: "RecursiveMenu.tsx",
-            path: "/src/components/RecursiveMenu.tsx",
           },
         ],
       },
@@ -34,7 +33,7 @@ const menu = [
         children: [
           {
             label: "menu.ts",
-            path: "/src/components/Yolo.tsx",
+            path: "/Yolo.tsx",
           },
         ],
       },
@@ -63,8 +62,8 @@ const menu = [
     label: "vite.config.ts",
   },
   {
-    label: "QrCodeGenerator",
-    path: "/src/components/QrCodeGenerator/QrCodeGenerator.tsx",
+    label: "QR Code Generator",
+    path: "/QRCodeGenerator.tsx",
   },
 ];
 

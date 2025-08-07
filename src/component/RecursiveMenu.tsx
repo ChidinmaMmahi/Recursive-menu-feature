@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type MenuItemProps = {
   item: {
@@ -11,10 +12,15 @@ type MenuItemProps = {
 
 const MenuItem = ({ item }: MenuItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     if (!item.children || item.children.length === 0) {
-      window.location.href = item.path || "";
+      if (item.path) {
+        navigate(item.path);
+      } else {
+        navigate("/NotFoundPage.tsx");
+      }
     } else {
       setIsOpen((prev) => !prev);
     }
