@@ -7,7 +7,7 @@ const StarRating = () => {
 
   return (
     <main className="flex flex-col justify-center items-center">
-      <div className="bg-gray-100 rounded-md flex flex-col gap-y-4 border py-10 px-16">
+      <div className="sm:bg-gray-100 rounded-md flex flex-col gap-y-4 sm:border py-10 sm:px-16">
         <div className="flex gap-x-1.5 ">
           {[1, 2, 3, 4, 5].map((star) => (
             <span

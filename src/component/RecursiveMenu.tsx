@@ -29,7 +29,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
   const hasChildren = item.children && item.children.length > 0;
 
   return (
-    <div className="">
+    <aside className="">
       <div
         onClick={handleClick}
         className={`${
@@ -51,7 +51,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
           ))}
         </div>
       )}
-    </div>
+    </aside>
   );
 };
 

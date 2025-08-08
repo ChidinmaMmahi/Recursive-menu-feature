@@ -17,11 +17,11 @@ const RandomColorGenerator = () => {
   };
   return (
     <div
-      className="flex flex-col items-center justify-center max-w-md  mx-auto py-10 rounded-lg"
+      className="flex flex-col items-center justify-center max-w-md  mx-auto p-10 rounded-lg"
       style={{ backgroundColor: color }}
     >
       <div className="bg-white/80 rounded-2xl shadow-md p-6 text-center">
-        <h1 className="text-2xl font-semibold mb-4 text-shadow-lg">
+        <h1 className="text-xl sm:text-2xl font-semibold mb-4 text-shadow-lg">
           🎨 Random Color Generator
         </h1>
         <div
@@ -31,7 +31,7 @@ const RandomColorGenerator = () => {
         <p className="mt-4 text-lg font-mono text-shadow-lg">{color}</p>
         <button
           onClick={handleGenerate}
-          className="mt-6 px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition"
+          className="mt-6 px-6 py-2 text-sm sm:text-base rounded-full bg-black text-white hover:bg-gray-800 transition"
         >
           Generate New Color
         </button>

@@ -1,10 +1,40 @@
 const menu = [
   {
+    label: "QR Code Generator",
+    path: "/QRCodeGenerator",
+  },
+  {
+    label: "Random Color Generator",
+    path: "/RandomColorGenerator",
+  },
+  {
+    label: "Image Slider",
+    path: "/ImageSlider",
+  },
+  {
+    label: "Star Rating System",
+    path: "/StarRatingSystem",
+  },
+  {
+    label: "Load More Feature",
+    path: "/LoadMoreFeature",
+  },
+  {
+    label: "Accordion",
+    children: [
+      {
+        label: "Accordion Sample",
+      },
+      {
+        label: "Math Trivia",
+      },
+    ],
+  },
+  {
     label: "public",
     children: [
       {
         label: "vite.svg",
-        path: "/public/vite.svg",
       },
     ],
   },
@@ -16,7 +46,6 @@ const menu = [
         children: [
           {
             label: "react.svg",
-            path: "/src/assets/react.svg",
           },
         ],
       },
@@ -54,32 +83,6 @@ const menu = [
         label: "vite-env.d.ts",
       },
     ],
-  },
-  {
-    label: "index.html",
-  },
-  {
-    label: "vite.config.ts",
-  },
-  {
-    label: "QR Code Generator",
-    path: "/QRCodeGenerator",
-  },
-  {
-    label: "Random Color Generator",
-    path: "/RandomColorGenerator",
-  },
-  {
-    label: "Star Rating System",
-    path: "/StarRatingSystem",
-  },
-  {
-    label: "Load More Feature",
-    path: "/LoadMoreFeature",
-  },
-  {
-    label: "Image Slider",
-    path: "/ImageSlider",
   },
 ];
 

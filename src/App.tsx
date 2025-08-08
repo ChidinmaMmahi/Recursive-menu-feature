@@ -5,16 +5,21 @@ import menu from "./data/menu";
 import ProjectRouter from "./routes/ProjectRouter";
 
 function App() {
+  const sideBarWidth = "20%";
   return (
     <Router>
-      <div className="hidden md:block bg-gray-900 fixed top-0 bottom-0 left-0 w-[20%] border-r border-r-black overflow-y-scroll">
+      <div
+        className={`hidden md:block bg-gray-900 fixed top-0 bottom-0 left-0 w-[${sideBarWidth}] border-r border-r-black overflow-y-scroll`}
+      >
         {menu.map((item, idx) => (
           <RecursiveMenu key={idx} item={item} />
         ))}
       </div>
-      <div className="md:ml-[20%] md:w-[80%] text-white">
-        <Header />
-        <div className="py-10 px-2 ">
+      <div className={`md:ml-[${sideBarWidth}] md:w-[80%] text-white`}>
+        <div className={`fixed top-0 right-0 left-0 md:left-[${sideBarWidth}]`}>
+          <Header />
+        </div>
+        <div className="mt-16 py-10 px-2 ">
           <ProjectRouter />
         </div>
       </div>

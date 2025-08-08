@@ -15,8 +15,8 @@ const ImageSlider = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col items-center gap-4 p-8">
-        <div className="relative w-[400px] h-[300px] overflow-hidden rounded-lg shadow-lg">
+      <div className="flex flex-col items-center gap-4">
+        <div className="relative w-full max-w-md h-[300px] overflow-hidden rounded-lg shadow-lg">
           <div
             className="flex w-full h-full transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
