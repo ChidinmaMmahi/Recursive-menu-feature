@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "../component/NotFoundPage";
 import Yolo from "../component/Yolo";
+import { Accordion } from "../projects/Accordion/AccordionProto";
+import { MathTrivia } from "../projects/Accordion/MathTrivia";
 import ImageSlider from "../projects/ImageSlider";
 import LoadMoreFeature from "../projects/LoadMoreFeature";
 import QRCodeGenerator from "../projects/QRCodeGenerator/";
@@ -17,6 +19,8 @@ const ProjectRouter = () => {
       <Route path="/StarRatingSystem" element={<StarRating />} />
       <Route path="/LoadMoreFeature" element={<LoadMoreFeature />} />
       <Route path="/ImageSlider" element={<ImageSlider />} />
+      <Route path="/AccordionSample" element={<Accordion />} />
+      <Route path="/MathTrivia" element={<MathTrivia />} />
     </Routes>
   );
 };

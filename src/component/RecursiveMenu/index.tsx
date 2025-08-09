@@ -36,7 +36,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
           hasChildren
             ? "font-semibold text-gray-500 text-sm"
             : "text-gray-400 text-xs"
-        } cursor-pointer border-b border-gray-700 p-2 hover:text-white`}
+        } cursor-pointer p-2 hover:text-[#666666]`}
       >
         <div className="flex items-center gap-2">
           {hasChildren && (isOpen ? "▼" : "▶")}

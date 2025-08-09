@@ -1,32 +1,39 @@
 const menu = [
   {
-    label: "QR Code Generator",
-    path: "/QRCodeGenerator",
-  },
-  {
-    label: "Random Color Generator",
-    path: "/RandomColorGenerator",
-  },
-  {
-    label: "Image Slider",
-    path: "/ImageSlider",
-  },
-  {
-    label: "Star Rating System",
-    path: "/StarRatingSystem",
-  },
-  {
-    label: "Load More Feature",
-    path: "/LoadMoreFeature",
-  },
-  {
-    label: "Accordion",
+    label: "Projects",
     children: [
       {
-        label: "Accordion Sample",
+        label: "QR Code Generator",
+        path: "/QRCodeGenerator",
       },
       {
-        label: "Math Trivia",
+        label: "Random Color Generator",
+        path: "/RandomColorGenerator",
+      },
+      {
+        label: "Image Slider",
+        path: "/ImageSlider",
+      },
+      {
+        label: "Star Rating System",
+        path: "/StarRatingSystem",
+      },
+      {
+        label: "Load More Feature",
+        path: "/LoadMoreFeature",
+      },
+      {
+        label: "Accordion",
+        children: [
+          {
+            label: "Accordion Sample",
+            path: "/AccordionSample",
+          },
+          {
+            label: "Math Trivia",
+            path: "/MathTrivia",
+          },
+        ],
       },
     ],
   },

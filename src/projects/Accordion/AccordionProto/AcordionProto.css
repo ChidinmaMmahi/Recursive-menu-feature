@@ -1,0 +1,52 @@
+.accordion-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 5px 20px 10px;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5b8;
+  background-color: #ffffff15;
+}
+
+.accordion-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-head h3 {
+  color: rgb(242, 242, 242);
+}
+
+.accordion-details {
+  font-size: 0.8em;
+  color: #f5deb3e3;
+}
+
+.dropdown {
+  cursor: pointer;
+  color: white;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container p {
+  color: #7b0202;
+  margin-bottom: 10px;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container p {
+  color: rgba(255, 255, 255, 0.875);
+  margin-bottom: 3px;
+}
