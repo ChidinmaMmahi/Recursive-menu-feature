@@ -141,6 +141,7 @@ export const MathTrivia = () => {
     setIsFavourite(isSaved);
   }, [fact, favouriteFacts]);
 
+ const loading = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col justify-center items-center">
@@ -148,11 +149,14 @@ export const MathTrivia = () => {
       </div>
     );
   }
+ }
+
+ loading();
 
   if (isError) {
     return (
       <div className="flex flex-col justify-center items-center">
-        <p className="mb-2.5 text-red-900">
+        <p className="mb-2.5 text-[#f92d2db3]">
           Sorry, can't reach the API now. Please try again later.
         </p>
         <button
@@ -177,7 +181,7 @@ export const MathTrivia = () => {
             onSubmit={handleSave}
             className="flex flex-col text-center space-y-10 w-full"
           >
-            <label htmlFor="inputBox" className="text-gray-200">
+            <label htmlFor="inputBox" className="text-primary">
               Type in any number from 0–1000 and uncover an interesting
               mathematical fact you’ve never heard before.
             </label>
@@ -203,8 +207,8 @@ export const MathTrivia = () => {
           </form>
           {isWrongInput && (
             <div className="flex items-center space-x-2 mt-1">
-              <IoWarning className="text-red-800 text-lg" />
-              <p className="text-xs lg:text-sm text-red-800">
+              <IoWarning className="text-[#f92d2db3] text-lg" />
+              <p className="text-xs lg:text-sm text-[#f92d2db3]">
                 Sorry, you can only enter numbers from 0 - 1000
               </p>
             </div>
@@ -213,7 +217,7 @@ export const MathTrivia = () => {
 
         <article className="w-full">
           <div
-            className="pt-1.5 px-5 pb-2.5 rounded border border-white/50 bg-white/15 mt-10"
+            className="pt-1.5 px-5 pb-2.5 rounded border border-accordion-card bg-accordion-card mt-10"
             key={`${fact?.number} - ${fact?.text}`}
           >
             <div className="flex justify-between items-center">
@@ -248,12 +252,17 @@ export const MathTrivia = () => {
           )}
         </article>
 
-        <button
-          className="accordion-button mt-3 text-xs text-blue-200"
-          onClick={fetchRandomFact}
-        >
-          Random Fact
-        </button>
+        
+          <div className="bg-red-100 w-full">
+            <button
+              className="accordion-button mt-3 text-xs text-blue-200"
+              onClick={fetchRandomFact}
+            >
+              Random Fact 
+            </button>
+          </div>
+          <div>{loading()}</div>
+        
 
         {favouriteFacts.length > 0 && (
           <div className="mt-10 w-full">
@@ -262,10 +271,10 @@ export const MathTrivia = () => {
               {favouriteFacts.map((fav, index) => (
                 <li
                   key={`${fav.number}-${index}`}
-                  className="bg-white/10 p-3 rounded border border-white/20 flex justify-between items-center"
+                  className="bg-accordion-card p-3 rounded border border-accordion-card flex justify-between items-center"
                 >
                   <div>
-                    <span className="text-blue-300 font-medium">
+                    <span className="text-blue-600 font-medium">
                       #{fav.number}:
                     </span>{" "}
                     {fav.text}

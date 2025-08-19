@@ -22,5 +22,13 @@ export const useTheme = () => {
     setDarkMode((prev) => !prev);
   };
 
-  return { darkMode, toggleTheme };
+  const toggleLight = () => {
+    setDarkMode(false);
+  };
+
+  const toggleDark = () => {
+    setDarkMode(true);
+  };
+
+  return { darkMode, toggleTheme, toggleLight, toggleDark };
 };

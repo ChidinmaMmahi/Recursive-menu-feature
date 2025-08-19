@@ -22,7 +22,7 @@ const QRCodeGenerator = () => {
       />
       <button
         onClick={handleGenerate}
-        className="bg-green-700 text-white px-4 py-2 rounded mb-4"
+        className="bg-green-700 hover:bg-green-900 cursor-pointer text-white px-4 py-2 rounded mb-4"
       >
         Generate
       </button>

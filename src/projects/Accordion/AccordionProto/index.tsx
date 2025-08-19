@@ -72,7 +72,7 @@ export const Accordion = () => {
     >
       {facts.slice(0, 6).map((fact, idx) => (
         <article
-          className="accordion-card"
+          className="accordion-card bg-accordion-card border border-accordion-card"
           ref={openIndex === idx ? accordionRef : null}
           key={fact.id}
         >

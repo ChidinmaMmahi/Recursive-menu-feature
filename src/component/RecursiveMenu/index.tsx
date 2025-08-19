@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 type MenuItemProps = {
@@ -13,6 +13,12 @@ type MenuItemProps = {
 const MenuItem = ({ item }: MenuItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (item.label === "Projects") {
+      setIsOpen(true);
+    }
+  }, [item.label]);
 
   const handleClick = () => {
     if (!item.children || item.children.length === 0) {
@@ -29,14 +35,14 @@ const MenuItem = ({ item }: MenuItemProps) => {
   const hasChildren = item.children && item.children.length > 0;
 
   return (
-    <aside className="">
+    <aside>
       <div
         onClick={handleClick}
         className={`${
           hasChildren
-            ? "font-semibold text-gray-500 text-sm"
-            : "text-gray-400 text-xs"
-        } cursor-pointer p-2 hover:text-[#666666]`}
+            ? "font-semibold text-sm"
+            : "text-xs"
+        } } cursor-pointer p-2 text-sidebar`}
       >
         <div className="flex items-center gap-2">
           {hasChildren && (isOpen ? "▼" : "▶")}
@@ -45,9 +51,9 @@ const MenuItem = ({ item }: MenuItemProps) => {
       </div>
 
       {isOpen && hasChildren && (
-        <div className="ml-4">
+        <div className="pl-4">
           {item.children?.map((child, idx) => (
-            <MenuItem key={idx} item={child} />
+            <MenuItem key={idx} item={child}/>
           ))}
         </div>
       )}
