@@ -141,17 +141,13 @@ export const MathTrivia = () => {
     setIsFavourite(isSaved);
   }, [fact, favouriteFacts]);
 
- const loading = () => {
-  if (isLoading) {
-    return (
-      <div className="flex flex-col justify-center items-center">
-        <div className="loader"></div>
-      </div>
-    );
-  }
- }
-
- loading();
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex flex-col justify-center items-center">
+  //       <div className="loader"></div>
+  //     </div>
+  //   );
+  // }
 
   if (isError) {
     return (
@@ -252,17 +248,15 @@ export const MathTrivia = () => {
           )}
         </article>
 
-        
-          <div className="bg-red-100 w-full">
-            <button
-              className="accordion-button mt-3 text-xs text-blue-200"
-              onClick={fetchRandomFact}
-            >
-              Random Fact 
-            </button>
-          </div>
-          <div>{loading()}</div>
-        
+        <div className="space-y-2 flex flex-col items-center">
+          <button
+            className="accordion-button mt-3 text-xs text-blue-200"
+            onClick={fetchRandomFact}
+          >
+            Random Fact
+          </button>
+          <div>{isLoading && <div className="loader"></div>}</div>{" "}
+        </div>
 
         {favouriteFacts.length > 0 && (
           <div className="mt-10 w-full">
