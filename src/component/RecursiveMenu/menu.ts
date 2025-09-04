@@ -35,6 +35,10 @@ const menu = [
           },
         ],
       },
+      {
+        label: "Scroll Indicator",
+        path: "/ScrollIndicator",
+      },
     ],
   },
   {

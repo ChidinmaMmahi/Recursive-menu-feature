@@ -8,6 +8,7 @@ import LoadMoreFeature from "../projects/LoadMoreFeature";
 import QRCodeGenerator from "../projects/QRCodeGenerator/";
 import RandomColorGenerator from "../projects/RandomColorGenerator";
 import StarRating from "../projects/StarRatingSystem";
+import ScrollIndicator from "../projects/ScrollIndicator";
 
 const ProjectRouter = () => {
   return (
@@ -21,6 +22,7 @@ const ProjectRouter = () => {
       <Route path="/ImageSlider" element={<ImageSlider />} />
       <Route path="/AccordionSample" element={<Accordion />} />
       <Route path="/MathTrivia" element={<MathTrivia />} />
+      <Route path="/ScrollIndicator" element={<ScrollIndicator />} />
     </Routes>
   );
 };

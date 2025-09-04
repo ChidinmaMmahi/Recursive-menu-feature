@@ -248,14 +248,16 @@ export const MathTrivia = () => {
           )}
         </article>
 
-        <div className="space-y-2 flex flex-col items-center">
+        <div className="space-y-2 flex flex-col items-center relative">
           <button
             className="accordion-button mt-3 text-xs text-blue-200"
             onClick={fetchRandomFact}
           >
             Random Fact
           </button>
-          <div>{isLoading && <div className="loader"></div>}</div>{" "}
+          <div className="absolute -right-12 top-1/2 -translate-y-1/2">
+            {isLoading && <div className="loader"></div>}
+          </div>{" "}
         </div>
 
         {favouriteFacts.length > 0 && (

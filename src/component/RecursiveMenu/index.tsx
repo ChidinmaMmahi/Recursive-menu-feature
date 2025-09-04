@@ -35,13 +35,11 @@ const MenuItem = ({ item }: MenuItemProps) => {
   const hasChildren = item.children && item.children.length > 0;
 
   return (
-    <aside>
+    <div>
       <div
         onClick={handleClick}
         className={`${
-          hasChildren
-            ? "font-semibold text-sm"
-            : "text-xs"
+          hasChildren ? "font-semibold text-sm" : "text-xs"
         } } cursor-pointer p-2 text-sidebar`}
       >
         <div className="flex items-center gap-2">
@@ -53,11 +51,11 @@ const MenuItem = ({ item }: MenuItemProps) => {
       {isOpen && hasChildren && (
         <div className="pl-4">
           {item.children?.map((child, idx) => (
-            <MenuItem key={idx} item={child}/>
+            <MenuItem key={idx} item={child} />
           ))}
         </div>
       )}
-    </aside>
+    </div>
   );
 };
 

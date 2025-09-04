@@ -10,18 +10,23 @@ function App() {
   const sideBarWidth = "20%";
   return (
     <Router>
-      <div
+      <aside
         className={`hidden md:block bg-secondary fixed top-16 bottom-0 left-0 border-r border-primary overflow-y-scroll`}
         style={{ width: sideBarWidth }}
       >
         {menu.map((item, idx) => (
           <RecursiveMenu key={idx} item={item} />
         ))}
-      </div>
-      
+      </aside>
+
       <div className={`text-primary`}>
         <div className={`fixed top-0 right-0 left-0`}>
-          <Header toggleTheme={toggleTheme} toggleDark={toggleDark} toggleLight={toggleLight} darkMode={darkMode} />
+          <Header
+            toggleTheme={toggleTheme}
+            toggleDark={toggleDark}
+            toggleLight={toggleLight}
+            darkMode={darkMode}
+          />
         </div>
         <div className="md:ml-[20%] md:w-[80%]  mt-16 py-10 px-2">
           <ProjectRouter />
