@@ -9,6 +9,7 @@ import QRCodeGenerator from "../projects/QRCodeGenerator/";
 import RandomColorGenerator from "../projects/RandomColorGenerator";
 import StarRating from "../projects/StarRatingSystem";
 import ScrollIndicator from "../projects/ScrollIndicator";
+import GithubProfileFinder from "../projects/GithubProfileFinder";
 
 const ProjectRouter = () => {
   return (
@@ -23,6 +24,7 @@ const ProjectRouter = () => {
       <Route path="/AccordionSample" element={<Accordion />} />
       <Route path="/MathTrivia" element={<MathTrivia />} />
       <Route path="/ScrollIndicator" element={<ScrollIndicator />} />
+      <Route path="/GithubProfileFinder" element={<GithubProfileFinder />} />
     </Routes>
   );
 };

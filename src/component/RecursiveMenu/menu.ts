@@ -39,6 +39,10 @@ const menu = [
         label: "Scroll Indicator",
         path: "/ScrollIndicator",
       },
+      {
+        label: "Github Profile Finder",
+        path: "/GithubProfileFinder",
+      },
     ],
   },
   {
