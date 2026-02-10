@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type MenuItemProps = {
   item: {
@@ -13,12 +13,40 @@ type MenuItemProps = {
 const MenuItem = ({ item }: MenuItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const hasChildren = item.children && item.children.length > 0;
+
+  const isSelfActive =
+    item.path &&
+    (location.pathname === item.path ||
+      location.pathname === `${item.path}/` ||
+      location.pathname.endsWith(`${item.path}`));
+
+  const hasActiveDescendant = (
+    children: MenuItemProps["item"][] | undefined
+  ): boolean => {
+    if (!children) return false;
+    return children.some((child) => {
+      if (child.path && location.pathname === child.path) {
+        return true;
+      }
+      if (child.children) {
+        return hasActiveDescendant(child.children);
+      }
+      return false;
+    });
+  };
+
+  const childIsActive = hasActiveDescendant(item.children);
+
+  const isHighlighted = Boolean(isSelfActive);
 
   useEffect(() => {
-    if (item.label === "Projects") {
+    if (item.label === "Projects" || childIsActive) {
       setIsOpen(true);
     }
-  }, [item.label]);
+  }, [item.label, childIsActive]);
 
   const handleClick = () => {
     if (!item.children || item.children.length === 0) {
@@ -32,15 +60,12 @@ const MenuItem = ({ item }: MenuItemProps) => {
     }
   };
 
-  const hasChildren = item.children && item.children.length > 0;
-
   return (
     <div>
       <div
         onClick={handleClick}
-        className={`${
-          hasChildren ? "font-semibold text-sm" : "text-xs"
-        } } cursor-pointer p-2 text-sidebar`}
+        className={`cursor-pointer p-2 text-sidebar ${hasChildren ? "font-semibold text-sm" : "text-xs"
+          } ${isHighlighted ? "text-red font-semibold" : ""}`}
       >
         <div className="flex items-center gap-2">
           {hasChildren && (isOpen ? "▼" : "▶")}

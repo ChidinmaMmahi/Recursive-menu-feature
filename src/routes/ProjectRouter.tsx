@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "../component/NotFoundPage";
 import Yolo from "../component/Yolo";
+import Welcome from "../component/Welcome";
 import { Accordion } from "../projects/Accordion/AccordionProto";
 import { MathTrivia } from "../projects/Accordion/MathTrivia";
 import ImageSlider from "../projects/ImageSlider";
@@ -10,10 +11,12 @@ import RandomColorGenerator from "../projects/RandomColorGenerator";
 import StarRating from "../projects/StarRatingSystem";
 import ScrollIndicator from "../projects/ScrollIndicator";
 import GithubProfileFinder from "../projects/GithubProfileFinder";
+import TicTacToe from "../projects/TicTacToe";
 
 const ProjectRouter = () => {
   return (
     <Routes>
+      <Route path="/" element={<Welcome />} />
       <Route path="/QRCodeGenerator" element={<QRCodeGenerator />} />
       <Route path="/Yolo" element={<Yolo />} />
       <Route path="/NotFoundPage" element={<NotFoundPage />} />
@@ -25,6 +28,7 @@ const ProjectRouter = () => {
       <Route path="/MathTrivia" element={<MathTrivia />} />
       <Route path="/ScrollIndicator" element={<ScrollIndicator />} />
       <Route path="/GithubProfileFinder" element={<GithubProfileFinder />} />
+      <Route path="/TicTacToe" element={<TicTacToe />} />
     </Routes>
   );
 };

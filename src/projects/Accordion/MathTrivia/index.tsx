@@ -4,6 +4,7 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 import "../Accordion.css";
+import { SearchInput } from "../../../shared/SearchInput";
 
 type MathFact = {
   text: string;
@@ -86,9 +87,10 @@ export const MathTrivia = () => {
   const fetchRandomFact = async () => {
     const randomNumber = Math.floor(Math.random() * 1000 + 1);
     setIsLoading(true);
+    setIsError(false);
     try {
       const res = await fetch(
-        `http://numbersapi.com/${randomNumber}/math?json`
+        `https://numbersapi.com/${randomNumber}/math?json`
       );
       const data: MathFact = await res.json();
       setFact(data);
@@ -105,7 +107,9 @@ export const MathTrivia = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`http://numbersapi.com/${theValue}/math?json`);
+        const res = await fetch(
+          `https://numbersapi.com/${theValue}/math?json`
+        );
         const data: MathFact = await res.json();
         setFact(data);
       } catch {
@@ -181,25 +185,17 @@ export const MathTrivia = () => {
               Type in any number from 0–1000 and uncover an interesting
               mathematical fact you’ve never heard before.
             </label>
-            <div className="w-full flex border border-green-800 rounded-full">
-              <input
-                type="text"
-                id="inputBox"
-                value={inputValue}
-                onChange={handleInputChange}
-                onKeyDown={handleKeydown}
-                inputMode="numeric"
-                pattern="[0-9]*"
-                className="w-full focus:border-0 outline-0 px-3 rounded-l-full"
-              />
-              <button
-                type="submit"
-                disabled={inputValue === "" || isWrongInput}
-                className="accordion-button rounded-r-full"
-              >
-                Enter
-              </button>
-            </div>
+
+            <SearchInput
+              id="inputBox"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeydown}
+              buttonLabel="Enter"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              disabled={isWrongInput}
+            />
           </form>
           {isWrongInput && (
             <div className="flex items-center space-x-2 mt-1">

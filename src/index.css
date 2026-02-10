@@ -19,7 +19,7 @@
 
   /* SideBar */
   --text-sidebar: #000000;
-  --text-sidebar-hover: #f92d2d;
+  --text-red: #f92d2d;
   --bg-sidebar-hover: #76747432;
 }
 
@@ -42,7 +42,7 @@
 
    /* SideBar */
    --text-sidebar: #dddddd;
-   --text-sidebar-hover: #f92d2d;
+   --text-red: #f92d2d;
    --bg-sidebar-hover: #b6b6b632;
 }
 
@@ -90,7 +90,10 @@
   color: var(--text-sidebar);
 }
 
+.text-red {
+  color: var(--text-red);
+}
+
 .text-sidebar:hover{
-  color: var(--text-sidebar-hover);
   background-color: var(--bg-sidebar-hover);
 }

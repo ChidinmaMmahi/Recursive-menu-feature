@@ -7,6 +7,27 @@ const menu = [
         path: "/QRCodeGenerator",
       },
       {
+        label: "Github Profile Finder",
+        path: "/GithubProfileFinder",
+      },
+      {
+        label: "Tic Tac Toe",
+        path: "/TicTacToe",
+      },
+      {
+        label: "Accordion",
+        children: [
+          {
+            label: "Math Trivia",
+            path: "/MathTrivia",
+          },
+          {
+            label: "Accordion Sample",
+            path: "/AccordionSample",
+          },
+        ],
+      },
+      {
         label: "Random Color Generator",
         path: "/RandomColorGenerator",
       },
@@ -15,33 +36,16 @@ const menu = [
         path: "/ImageSlider",
       },
       {
-        label: "Star Rating System",
-        path: "/StarRatingSystem",
-      },
-      {
         label: "Load More Feature",
         path: "/LoadMoreFeature",
       },
       {
-        label: "Accordion",
-        children: [
-          {
-            label: "Accordion Sample",
-            path: "/AccordionSample",
-          },
-          {
-            label: "Math Trivia",
-            path: "/MathTrivia",
-          },
-        ],
+        label: "Star Rating System",
+        path: "/StarRatingSystem",
       },
       {
         label: "Scroll Indicator",
         path: "/ScrollIndicator",
-      },
-      {
-        label: "Github Profile Finder",
-        path: "/GithubProfileFinder",
       },
     ],
   },

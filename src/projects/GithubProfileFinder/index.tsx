@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGithubSearch } from "./api/useGithubSearch";
 import { useGithubUserSuggestions } from "./api/useGithubUserSuggestions";
+import { SearchInput } from "../../shared/SearchInput";
 
 const GithubProfileFinder: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -47,30 +48,34 @@ const GithubProfileFinder: React.FC = () => {
     setIsDropdownOpen(false);
   };
 
+  const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSubmitSearch();
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
+  const handleFocus = () => {
+    setIsDropdownOpen(suggestions.length > 0);
+  };
+
   return (
     <main className="flex flex-col items-center">
       <div className="max-w-md w-full relative" ref={wrapperRef}>
         <h1 className="text-3xl font-bold mb-6">🔎 GitHub Profile Finder</h1>
 
         <form onSubmit={onSubmitSearch} className="mb-2">
-          <div className="border border-loadmore-card rounded-full flex items-center mb-0 relative">
-            <input
-              type="text"
-              placeholder="Enter GitHub username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="px-4 py-2 rounded-l-full w-full focus:outline-0"
-              onFocus={() => setIsDropdownOpen(suggestions.length > 0)}
-              aria-label="GitHub username"
-            />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-secondary rounded-r-full !hover:bg-blue-700 cursor-pointer"
-              onClick={() => {}}
-            >
-              Search
-            </button>
-          </div>
+          <SearchInput
+            placeholder="Enter GitHub username"
+            value={username}
+            onChange={handleInputChange}
+            onKeyDown={handleKeydown}
+            onFocus={handleFocus}
+            buttonLabel="Search"
+          />
         </form>
 
         {/* Autocomplete Dropdown */}
